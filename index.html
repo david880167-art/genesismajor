@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>安心貸款代辦團隊</title>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f4f6f9;
+  color:#1f2d3d;
+}
+
+
+/* 導覽列 */
+.nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#1f3a5f;
+  color:white;
+  padding:15px 50px;
+  font-size:20px;
+  font-weight:bold;
+  z-index:999;
+}
+
+/* 主視覺 */
+.hero{
+  height:60vh;
+  min-height:400px;
+
+  background: linear-gradient(
+      135deg,
+      #0b1f3a,
+      #112d5a,
+      #1e4fa3
+  );
+
+  background-size:400% 400%;
+  animation: gradientMove 15s ease infinite;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+  top:-100px;
+  right:-100px;
+  filter:blur(80px);
+}
+.hero-content{
+  position:relative;
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.8;
+}
+
+/* 區塊共用 */
+.section{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.section h2{
+  margin-bottom:40px;
+  font-size:28px;
+  color:#1f3a5f;
+}
+
+/* 卡片 */
+.cards{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.data-section .card{
+  background:url("sandbox:/mnt/data/a_digital_photograph_showcases_an_upscale_modern.png") center/cover no-repeat;
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.data-section .card h3{
+  color:white;
+}
+
+/* 流程 */
+.steps{
+  max-width:800px;
+  margin:auto;
+  text-align:left;
+  line-height:2;
+}
+
+/* 為何選擇我們 */
+.why{
+  max-width:800px;
+  margin:auto;
+  text-align:left;
+  line-height:2;
+}
+
+/* FAQ */
+.faq{
+  max-width:800px;
+  margin:auto;
+  text-align:left;
+  line-height:2;
+}
+
+/* 聯絡 */
+.contact{
+  background:#1f3a5f;
+  color:white;
+  padding:60px 20px;
+  text-align:center;
+}
+
+.contact a{
+  color:white;
+  text-decoration:underline;
+}
+
+/* 頁尾 */
+.footer{
+  background:#0f1e30;
+  color:#ccc;
+  font-size:12px;
+  padding:20px;
+  text-align:center;
+}
+/* LINE 浮動按鈕 */
+.line-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#06C755;
+  color:white;
+  padding:12px 18px;
+  border-radius:50px;
+  font-size:16px;
+  text-decoration:none;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  z-index:1000;
+  transition:0.3s;
+}
+
+.line-float:hover{
+  transform:scale(1.1);
+}
+.process-cards{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  max-width:800px;
+  margin:auto;
+  position:relative;
+  padding-left:40px;
+}
+
+.process-card{
+  background:white;
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.process-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(0,0,0,0.1);
+}
+
+.process-number{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#1f3a5f;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.process-card h4{
+  margin:0;
+  color:#1f3a5f;
+}
+
+.process-card p{
+  margin:5px 0 0 0;
+  font-size:14px;
+  opacity:0.8;
+}
+/* 服務流程左右排 */
+.service-box{
+  display:flex;
+align-items:flex-start;
+  justify-content:space-between;
+  gap:40px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* 左邊文字 */
+.service-box .steps{
+  width:50%;
+  text-align:left;
+  line-height:2;
+}
+
+/* 右邊圖片 */
+.service-image{
+  width:50%;
+}
+
+.service-image img{
+  width:100%;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 手機版自動變直排 */
+@media (max-width:768px){
+  .service-box{
+    flex-direction:column;
+  }
+
+  .service-box .steps,
+  .service-image{
+    width:100%;
+  }
+}
+@media (max-width:768px){
+
+  .service-box{
+    flex-direction:column;
+  }
+
+  .service-box .steps,
+  .service-image{
+    width:100%;
+  }
+
+  /* 🔥 流程卡手機優化 */
+  .process-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .process-number{
+    margin-bottom:10px;
+  }
+
+}
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.nav-logo img{
+  width:45px;
+  height:45px;
+  object-fit:cover;
+  border-radius:50%; /* 🔥 這個讓它變圓形 */
+  background:white;
+  padding:3px;
+}
+.service-banner{
+  width:90%;
+  max-width:1100px;
+  display:block;
+  margin:0 auto 30px auto;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+  object-fit:cover;
+}
+.hero-sub{
+  font-size:16px;
+  opacity:0.9;
+  margin-top:10px;
+}
+
+.hero-stats{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.hero-stats div{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.2);
+}
+.hero-stats div:hover{
+  transform:scale(1.1);
+}
+/* 為何選擇我們 - 卡片化設計 */
+.why-box{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:25px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.why-card{
+  background:white;
+  width:360px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+  text-align:left;
+}
+
+
+.data-section .card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+
+.data-section .card > *{
+  position:relative;
+  z-index:2;
+}
+
+.why-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 15px 30px rgba(0,0,0,0.15);
+}
+
+.why-card h4{
+  margin:0 0 10px 0;
+  color:#1f3a5f;
+}
+
+.why-card p{
+  margin:0;
+  font-size:14px;
+  opacity:0.8;
+}
+@keyframes gradientMove{
+  0%{
+    background-position:0% 50%;
+  }
+  50%{
+    background-position:100% 50%;
+  }
+  100%{
+    background-position:0% 50%;
+  }
+}
+.contact-warning{
+  display:flex;
+  flex-wrap:wrap;
+  gap:50px;
+  max-width:1100px;
+  margin:auto;
+  padding:70px 50px;
+  background:linear-gradient(135deg,#ffffff,#f4f6f9);
+  border-radius:30px;
+  box-shadow:0 30px 60px rgba(0,0,0,0.06);
+  position:relative;
+  align-items:stretch;
+}
+
+.contact-box{
+  flex:1.2;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.05);
+  text-align:left;
+}
+
+.contact-box::after,
+/* ========= 豪華卡片 ========= */
+.warning-box{
+  flex:0.8;
+  min-width:280px;
+  background:linear-gradient(135deg,#fff8e1,#ffe8b3);
+  padding:40px;
+  border-radius:25px;
+  border:1px solid #ffe0a3;
+  text-align:left;
+
+  position:relative;
+  overflow:hidden;
+
+  box-shadow:0 15px 30px rgba(0,0,0,0.06);
+  transition:0.4s;
+}
+
+/* ✨ 發光動畫邊框 */
+.warning-box::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,152,0,0.6),
+    transparent
+  );
+  z-index:-1;
+  animation:lightMove 3s linear infinite;
+}
+
+/* 動畫 */
+@keyframes lightMove{
+  0%{transform:translateX(-100%);}
+  100%{transform:translateX(100%);}
+}
+
+/* 滑鼠效果 */
+.warning-box:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 30px 60px rgba(255,152,0,0.25);
+}
+
+/* ========= 右上角盾牌標章 ========= */
+.warning-badge{
+  position:absolute;
+  top:15px;
+  right:15px;
+
+  background:linear-gradient(135deg,#ff9800,#ff6f00);
+  color:white;
+  font-size:12px;
+  padding:8px 14px;
+  border-radius:30px;
+
+  font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+  animation:pulse 2s infinite;
+}
+
+/* 呼吸動畫 */
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);}
+}
+
+/* ========= 圖片 ========= */
+.warning-img{
+  width:100%;
+  border-radius:15px;
+  margin:20px 0;
+}
+.badge{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:#1f3a5f;
+  color:white;
+  padding:6px 14px;
+  border-radius:50px;
+  font-size:12px;
+  font-weight:bold;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.warning-img{
+  width:100%;
+  border-radius:10px;
+  margin:15px 0;
+}
+.contact-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#1f3a5f;
+  color:white;
+  padding:15px 30px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.contact-btn:hover{
+  background:#16305a;
+  transform:translateY(-3px);
+}
+.faq-box{
+  max-width:800px;
+  margin:auto;
+  text-align:left;
+}
+
+.faq-item{
+  background:white;
+  margin-bottom:15px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-question{
+  width:100%;
+  padding:18px;
+  font-size:16px;
+  background:#1f3a5f;
+  color:white;
+  border:none;
+  text-align:left;
+  cursor:pointer;
+}
+
+.faq-answer{
+  padding:18px;
+  display:none;
+  line-height:1.8;
+  font-size:14px;
+}
+/* 服務流程上方滑動卡片 */
+.slider-section{
+  padding:80px 20px 20px 20px;
+  background: linear-gradient(135deg,#0b1f3a,#1e4fa3);
+}
+
+.slider-section .swiper{
+  width:90%;
+  max-width:900px;
+  height:320px;
+}
+
+.glass-card{
+  height:100%;
+  border-radius:20px;
+  padding:40px;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.3);
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  color:white;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.glass-card h3{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.glass-card p{
+  font-size:15px;
+  opacity:0.9;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  color:white;
+}
+
+.swiper-pagination-bullet{
+  background:white;
+  opacity:0.5;
+}
+
+.swiper-pagination-bullet-active{
+  opacity:1;
+}
+
+
+
+
+.process-cards::before{
+  content:"";
+  position:absolute;
+  left:25px;
+  top:0;
+  width:4px;
+  height:100%;
+  background:#1f3a5f;
+  border-radius:10px;
+}
+
+.process-card{
+  position:relative;
+  padding-left:70px;
+}
+/* 🔥 背景柔光裝飾 */
+.decor-circle{
+  position:absolute;
+  width:220px;
+  height:220px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  filter:blur(70px);
+  z-index:0;
+}
+
+.circle1{
+  top:120px;
+  left:-60px;
+}
+
+.circle2{
+  bottom:80px;
+  right:-100px;
+}
+.section{
+  position:relative;
+  overflow:hidden;
+}
+
+/* 區塊背景小光點 */
+.section::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(31,58,95,0.05);
+  border-radius:50%;
+  top:-100px;
+  right:-100px;
+  filter:blur(80px);
+  z-index:0;
+}
+
+.section > *{
+  position:relative;
+  z-index:1;
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:600px;
+  padding:30px;
+  border-radius:15px;
+  position:relative;
+}
+.close-btn{
+  position:absolute;
+  right:15px;
+  top:10px;
+  font-size:25px;
+  cursor:pointer;
+  color:#666;
+}
+
+.close-btn:hover{
+  color:#000;
+}
+.banner-section{
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+.banner{
+  margin-bottom:25px;
+}
+
+.banner img{
+  width:100%;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.swiper-slide img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+@media (max-width:768px){
+  .swiper-slide img{
+    height:200px;
+  }
+}
+/* 點擊展開 */
+.accordion{
+  width:100%;
+  max-width:800px;
+  margin:auto;
+  margin-bottom:15px;
+}
+
+.accordion-btn{
+  width:100%;
+  padding:18px;
+  font-size:18px;
+  background:#1f3a5f;
+  color:white;
+  border:none;
+  text-align:left;
+  cursor:pointer;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.accordion-btn:hover{
+  background:#16305a;
+}
+
+.accordion-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.4s ease;
+  background:white;
+  padding:0 18px;
+  border-radius:0 0 10px 10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.accordion-content p{
+  padding:15px 0;
+  font-size:15px;
+  line-height:1.8;
+}
+.data-section{
+  background:url("https://images.unsplash.com/photo-1497366216548-37526070297c") center/cover no-repeat;
+  padding:90px 20px;
+  position:relative;
+}
+
+.data-section .card::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+}
+
+.data-section .card > *{
+  position:relative;
+  z-index:2;
+}
+
+/* 黑色透明遮罩 */
+.data-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+}
+
+/* 卡片排列 */
+.cards{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  gap:60px;
+  flex-wrap:wrap;
+}
+
+/* 每個數據 */
+.card{
+  text-align:center;
+  color:white;
+}
+
+/* 數字 */
+.card h3{
+  font-size:44px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
+/* 說明文字 */
+.card p{
+  font-size:18px;
+  opacity:0.9;
+}
+
+.card{
+  text-align:center;
+  color:#1f3a5f;
+  background:white;
+  padding:30px 40px;
+  border-radius:15px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  min-width:180px;
+}
+
+.team-title{
+  font-size:20px;
+  font-weight:600;
+  color:#1f3a5f;
+  margin-bottom:12px;
+  letter-spacing:1px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <div class="nav-logo">
+    <img src="公司logo.Jpg.jpg" alt="logo">
+    <span>創世紀貸款</span>
+  </div>
+</div>
+
+<section class="slider-section">
+
+<div class="swiper imageSwiper">
+
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <img src="首圖1.Jpg.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="首圖2.Jpg.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="首圖3.Jpg.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="首圖4.Jpg.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="首圖5.Jpg.png">
+    </div>
+
+  </div>
+
+  <div class="image-pagination"></div>
+  <div class="image-next"></div>
+  <div class="image-prev"></div>
+
+</div>
+
+</section>
+
+<section class="section">
+<h2>關於我們</h2>
+
+<div style="max-width:900px;margin:auto;text-align:center;line-height:2;font-size:16px;">
+
+<p>
+創世紀貸款代辦團隊為專業金融規劃服務團隊，
+專注於房屋貸款、汽車貸款、信用貸款與債務整合規劃。
+</p>
+
+<p>
+我們透過銀行審核邏輯分析與專業財務評估，
+為客戶量身打造最適合的資金解決方案。
+</p>
+
+</div>
+</section>
+<section class="section">
+
+<img src="宣傳圖.Jpg.jpg" class="service-banner">
+
+<h2>服務項目</h2>
+
+<div class="cards">
+
+  <div class="accordion">
+    <button class="accordion-btn">🏠 房貸規劃</button>
+    <div class="accordion-content">
+      <p>
+      • 首購族低利房貸<br>
+      • 轉貸降息評估<br>
+      • 房屋增貸<br>
+      • 負債整合轉貸<br>
+      • 青年安心成家方案<br>
+      • 軍公教優惠專案
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn">🚗 車貸規劃</button>
+    <div class="accordion-content">
+      <p>
+      • 新車貸款<br>
+      • 中古車貸款<br>
+      • 高額度快速審核<br>
+      • 低利轉貸
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn">📱 手機貸規劃</button>
+    <div class="accordion-content">
+      <p>
+      • 新機分期方案<br>
+      • 舊機換現金<br>
+      • 信用條件評估<br>
+      • 無薪轉彈性審核<br>
+      • 3C產品整合分期
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn">💳 信用貸規劃</button>
+    <div class="accordion-content">
+      <p>
+      • 個人資金周轉<br>
+      • 高額度貸款評估<br>
+      • 卡債與多筆整合<br>
+      • 信用條件優化<br>
+      • 無擔保快速核貸
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <button class="accordion-btn">💰 貸款整合規劃</button>
+    <div class="accordion-content">
+      <p>
+      • 多筆貸款整併<br>
+      • 信貸與卡債整合<br>
+      • 高利轉低利優化<br>
+      • 延長還款期限<br>
+      • 降低月付壓力
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<img src="獎狀海報.Jpg.png" class="service-banner">
+<section class="section">
+<h2>專業代辦團隊</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3 class="team-title">主理顧問</h3>
+<p>
+13年以上銀行與貸款實務經驗<br>
+專精房貸 / 信貸 / 債務整合<br>
+協助超過300+案件成功核貸
+</p>
+</div>
+
+<div class="card">
+<h3 class="team-title">風控分析團隊</h3>
+<p>
+深入分析銀行審核邏輯<br>
+提高核准機率<br>
+降低被退件風險
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="data-section">
+
+<div class="cards">
+
+<div class="card">
+<h3>300+</h3>
+<p>成功核貸案件</p>
+</div>
+
+<div class="card">
+<h3>97%</h3>
+<p>客戶滿意度</p>
+</div>
+
+<div class="card">
+<h3>13年</h3>
+<p>專業經驗</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="slider-section">
+
+<div class="swiper textSwiper">
+
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <div class="glass-card">
+        <h3>房貸規劃</h3>
+        <p>減輕負擔,專人量身打造您的專屬方案,讓您更安心✨,
+          增貸評估，幫助首購和換屋族從繁華的借貸中度過,實現穩健的成家夢。🌱</p>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="glass-card">
+        <h3>車貸規劃</h3>
+        <p>新車、中古車貸款送件規劃,✔️車子還在開,資金變出來!不押車,撥款快,讓您的愛車發揮最大的價值,解決燃眉之急。🔥</p>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="glass-card">
+        <h3>信用貸款</h3>
+        <p>銀行信貸媒合，提高核准成功率,信用評分迷茫?別急著隨便申辦!我們懂銀行篩選機制,幫您培養高分信用,爭取更低利率🌈</p>
+      </div>
+    </div>
+
+    <div class="swiper-slide">
+      <div class="glass-card">
+        <h3>貸款整合</h3>
+        <p>針對高負債比,如信貸+卡債超過收入,找出解決方案!💫整合債務集中管理,選擇合適方案,降低月付壓力</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 控制 -->
+  <div class="text-pagination"></div>
+  <div class="text-next"></div>
+  <div class="text-prev"></div>
+
+</div>
+
+</section>
+</section>
+<section class="section">
+<h2>服務流程</h2>
+<p style="max-width:550px;margin:auto;opacity:0.7;">
+我們協助您從諮詢 → 評估 → 文件 → 送件 → 撥款
+完整陪伴每一步。
+
+</p>
+
+<div class="service-box">
+
+ <div class="process-cards">
+
+<div class="process-card">
+  <div class="process-number">01</div>
+  <div>
+    <h4>免費初步諮詢</h4>
+    <p>了解您的需求與基本條件。</p>
+  </div>
+</div>
+
+<div class="process-card">
+  <div class="process-number">02</div>
+  <div>
+    <h4>條件評估</h4>
+    <p>分析適合您的銀行方案。</p>
+  </div>
+</div>
+
+<div class="process-card">
+  <div class="process-number">03</div>
+  <div>
+    <h4>文件整理</h4>
+    <p>協助準備完整資料，避免缺件退件。</p>
+  </div>
+</div>
+
+<div class="process-card">
+  <div class="process-number">04</div>
+  <div>
+    <h4>銀行送件</h4>
+    <p>協助對接銀行窗口。</p>
+  </div>
+</div>
+
+<div class="process-card">
+  <div class="process-number">05</div>
+  <div>
+    <h4>核准撥款</h4>
+    <p>依銀行核准結果完成流程。</p>
+  </div>
+</div>
+
+</div>
+
+  <img src="流程宣傳圖.Jpg" style="width:300px; border:4px solid #1f3a5f; border-radius:10px; padding:5px;">
+
+</div>
+
+</section>
+
+<section class="section">
+<h2>為何選擇我們</h2>
+
+<div class="why-box">
+
+  <div class="why-card">
+    <h4>🔒 客戶資料保密</h4>
+    <p>嚴格保護客戶資訊，安心諮詢。</p>
+  </div>
+
+  <div class="why-card">
+    <h4>🏢 可預約實體面談</h4>
+    <p>提供實體面談服務，更安心信任。</p>
+  </div>
+
+  <div class="why-card">
+    <h4>💰 收費透明</h4>
+    <p>事前清楚說明費用，不隱藏條件。</p>
+  </div>
+
+  <div class="why-card">
+    <h4>📊 專業評估</h4>
+    <p>依據個人條件精準分析方案。</p>
+  </div>
+
+  <div class="why-card">
+    <h4>✅ 不誇大過件率</h4>
+    <p>誠實告知風險與審核條件。</p>
+  </div>
+
+</div>
+</section>
+
+
+<section class="section">
+<h2>常見問題</h2>
+
+<div class="faq-box">
+
+  <!-- 1 -->
+  <div class="faq-item">
+    <button class="faq-question">一定保證核貸嗎？</button>
+    <div class="faq-answer">
+      不保證核貸，實際結果仍依銀行審核為準。
+      我們會提高成功機率並優化申請條件。
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="faq-item">
+    <button class="faq-question">需要先收費嗎？</button>
+    <div class="faq-answer">
+      收費方式會事前清楚說明，不會隱藏費用，
+      服務內容透明公開。
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="faq-item">
+    <button class="faq-question">信用不好可以申請嗎？</button>
+    <div class="faq-answer">
+      可以先做條件評估，依個人信用狀況
+      規劃適合的銀行方案。
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="faq-item">
+    <button class="faq-question">需要準備哪些文件？</button>
+    <div class="faq-answer">
+      通常需要身分證、收入證明、
+      財力證明與相關貸款文件，
+      詳細會依案件類型說明。
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="faq-item">
+    <button class="faq-question">申請流程需要多久？</button>
+    <div class="faq-answer">
+      一般3～14個工作天，
+      依銀行審核速度與案件複雜度而定。
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="faq-item">
+    <button class="faq-question">可以現場面談嗎？</button>
+    <div class="faq-answer">
+      可預約實體面談時間，
+      提供更完整的專屬規劃服務。
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="faq-item">
+    <button class="faq-question">利率怎麼計算？</button>
+    <div class="faq-answer">
+      利率依銀行審核條件與個人信用評分決定，
+      我們會幫您爭取較低利率方案。
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="faq-item">
+    <button class="faq-question">可以同時整合多筆貸款嗎？</button>
+    <div class="faq-answer">
+      可以，我們有專業債務整合規劃，
+      幫您降低月付壓力。
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="faq-item">
+    <button class="faq-question">貸款會影響聯徵紀錄嗎？</button>
+    <div class="faq-answer">
+      申請貸款會留下聯徵查詢紀錄，
+      但我們會幫您規劃最合適送件方式。
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="faq-item">
+    <button class="faq-question">外縣市可以服務嗎？</button>
+    <div class="faq-answer">
+      可以線上諮詢,
+      不受地區限制。
+    </div>
+  </div>
+
+</div>
+</section>
+
+<section class="section">
+<h2>專業金融顧問 · 為您把關資金安全</h2>
+
+<p style="max-width:700px;margin:auto;opacity:0.6;line-height:1.8;">
+我們專注於貸款規劃與銀行對接，
+透過專業分析與風控評估，
+為客戶爭取更穩定、更安全的資金方案。
+</p>
+
+<section class="section">
+<div class="contact-warning">
+  
+  <!-- 聯絡區 -->
+ <div class="contact-box">
+  <h2>立即免費諮詢</h2>
+
+  <p style="opacity:0.7;">
+  專人1對1分析您的貸款條件
+  </p>
+
+  <a href="https://lin.ee/lJxyT6J" class="contact-btn">
+    🔥 立即加入LINE
+  </a>
+
+</div>
+
+  <!-- 防詐區 -->
+<div class="warning-box">
+  <div class="badge">✔ 安全認證</div>
+  <h3 style="color:#c0392b;">⚠️ 我們的服務承諾</h3>
+
+  <ul style="line-height:2;">
+    <li>✔ 不保證核貸，誠實告知風險</li>
+    <li>✔ 不收隱藏費用</li>
+    <li>✔ 不要求先匯款</li>
+  </ul>
+
+  <img src="防範金融詐騙圖Jpg.jpg" class="warning-img">
+</div>
+
+</div>
+</section>
+
+<div class="footer">
+版權資訊 © 2010 創世紀貸款 |
+<a style="cursor:pointer;" onclick="openPrivacy()">
+隱私政策
+</a>
+</div>
+
+<div class="footer">
+本公司為貸款規劃顧問，協助客戶辦理相關文件與流程。實際核貸條件與利率依各銀行審核結果為準。
+</div>
+<a href="https://lin.ee/lJxyT6J" 
+   target="_blank" 
+   class="line-float">
+   加入LINE諮詢
+</a>
+<script>
+document.querySelectorAll(".faq-question").forEach(button=>{
+  button.addEventListener("click", ()=>{
+    const answer = button.nextElementSibling;
+    const isOpen = answer.style.display === "block";
+
+    document.querySelectorAll(".faq-answer").forEach(a=>{
+      a.style.display = "none";
+    });
+
+    answer.style.display = isOpen ? "none" : "block";
+  });
+});
+</script>
+
+
+<!-- 🔐 隱私政策彈窗 -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closePrivacy()">&times;</span>
+
+    <h2>隱私政策</h2>
+
+    <p>
+    我們尊重客戶隱私，所有資料僅供貸款評估使用，
+    不會外流或轉售。
+    </p>
+
+  </div>
+</div>
+
+<script>
+function openPrivacy(){
+  document.getElementById("privacyModal").style.display = "flex";
+}
+
+function closePrivacy(){
+  document.getElementById("privacyModal").style.display = "none";
+}
+
+window.onclick = function(event){
+  let modal = document.getElementById("privacyModal");
+  if(event.target == modal){
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const buttons = document.querySelectorAll(".accordion-btn");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function(){
+
+      const content = this.nextElementSibling;
+
+      // 如果已經打開就關閉
+      if(content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+
+        // 先關閉其他
+        document.querySelectorAll(".accordion-content").forEach(box => {
+          box.style.maxHeight = null;
+        });
+
+        // 打開現在這個
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+
+    });
+  });
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // 🔹 圖片輪播
+  new Swiper(".imageSwiper", {
+    loop: true,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: ".image-pagination", clickable: true },
+    navigation: { nextEl: ".image-next", prevEl: ".image-prev" },
+  });
+
+  // 🔹 文字輪播
+  new Swiper(".textSwiper", {
+    loop: true,
+    autoplay: { delay: 3500, disableOnInteraction: false },
+    pagination: { el: ".text-pagination", clickable: true },
+    navigation: { nextEl: ".text-next", prevEl: ".text-prev" },
+  });
+
+  // 🔹 FAQ 點擊展開
+  document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.style.display === "block";
+
+      document.querySelectorAll(".faq-answer").forEach(a => {
+        a.style.display = "none";
+      });
+
+      answer.style.display = isOpen ? "none" : "block";
+    });
+  });
+
+  // 🔹 Accordion 點擊展開
+  const accBtns = document.querySelectorAll(".accordion-btn");
+  accBtns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        document.querySelectorAll(".accordion-content").forEach(box => {
+          box.style.maxHeight = null;
+        });
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  });
+});
+</script>
+
+
+<script>
+
+// FAQ 點擊展開
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    const answer = button.nextElementSibling;
+    const isOpen = answer.style.display === "block";
+
+    document.querySelectorAll(".faq-answer").forEach(a => {
+      a.style.display = "none";
+    });
+
+    answer.style.display = isOpen ? "none" : "block";
+  });
+});
+
+
+// Accordion 點擊展開
+document.querySelectorAll(".accordion-btn").forEach(btn => {
+  btn.addEventListener("click", function () {
+
+    const content = this.nextElementSibling;
+
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+
+      document.querySelectorAll(".accordion-content").forEach(box => {
+        box.style.maxHeight = null;
+      });
+
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+  });
+});
+
+</script>
+
+</body>
+</html>
