@@ -898,7 +898,56 @@ z-index:999;
 .line-float:hover{
 background:#05a84f;
 }
-  
+
+
+/* 防止元素撐爆 */
+*{
+  box-sizing:border-box;
+}
+
+/* 圖片不超出 */
+img{
+  max-width:100%;
+  height:auto;
+}
+
+/* 手機版排版 */
+@media (max-width:768px){
+
+  body{
+    padding:0 15px;
+  }
+
+  /* 卡片改成直排 */
+  .cards{
+    flex-direction:column;
+  }
+
+  .card{
+    width:100%;
+    margin-bottom:15px;
+  }
+
+  /* 黃色服務承諾 */
+  .warning-box{
+    width:100%;
+    padding:20px;
+  }
+
+  /* 防詐騙圖片 */
+  .warning-box img{
+    width:100%;
+    height:auto;
+  }
+
+  /* 按鈕大小 */
+  .cta a{
+    width:100%;
+    display:block;
+    text-align:center;
+  }
+
+}
 </style>
 </head>
 
@@ -1559,4 +1608,5 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
