@@ -1035,6 +1035,23 @@ bottom:15px;
 }
 
 }
+
+  /* 背景裝飾：房子、銀行、錢幣 */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><polygon points='32,8 8,32 16,32 16,56 48,56 48,32 56,32' fill='blue'/></svg>") no-repeat 10% 20% / 100px 100px,
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect x='8' y='16' width='48' height='32' fill='orange'/><polygon points='32,0 0,16 64,16' fill='brown'/></svg>") no-repeat 50% 30% / 120px 80px,
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='16' fill='gold'/></svg>") no-repeat 80% 70% / 80px 80px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
 </style>
 </head>
 
@@ -1736,6 +1753,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
