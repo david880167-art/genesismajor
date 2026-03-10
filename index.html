@@ -1085,7 +1085,6 @@ bottom:15px;
     <span>創世紀貸款</span>
   </div>
 </div>
-
 <section class="hero-slider">
   <div class="swiper imageSwiper">
     <div class="swiper-wrapper">
@@ -1093,22 +1092,44 @@ bottom:15px;
       <div class="swiper-slide"><img src="首圖2.Jpg.png" alt="首圖2"></div>
       <div class="swiper-slide"><img src="首圖3.Jpg.png" alt="首圖3"></div>
     </div>
+    <!-- 分頁點 -->
     <div class="image-pagination"></div>
+    <!-- 箭頭 -->
     <div class="image-next"></div>
     <div class="image-prev"></div>
   </div>
 
+  <!-- 文字覆蓋 -->
   <div class="hero-overlay">
     <h1>專業貸款顧問服務</h1>
     <p>房貸・信貸・車貸・債務整合，量身打造最適合方案</p>
     <a href="https://lin.ee/lJxyT6J" class="contact-btn">🔥 免費諮詢</a>
   </div>
 
+  <!-- 背景柔光圓 -->
   <div class="hero-decor decor1"></div>
   <div class="hero-decor decor2"></div>
   <div class="hero-decor decor3"></div>
 </section>
-  
+
+<!-- Swiper 初始化 -->
+<script>
+  const swiper = new Swiper('.imageSwiper', {
+    loop: true,
+    pagination: {
+      el: '.image-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.image-next',
+      prevEl: '.image-prev',
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+</script>
 <section class="section">
 <h2>關於我們</h2>
 
@@ -1806,6 +1827,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
