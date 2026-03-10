@@ -1047,7 +1047,6 @@ bottom:15px;
     <span>創世紀貸款</span>
   </div>
 </div>
-
 <section class="slider-section">
 
 <div class="swiper imageSwiper">
@@ -1075,6 +1074,12 @@ bottom:15px;
     </div>
 
   </div>
+
+  <div class="image-pagination"></div>
+  <div class="image-next"></div>
+  <div class="image-prev"></div>
+
+</div>
 
   <div class="image-pagination"></div>
   <div class="image-next"></div>
@@ -1576,22 +1581,44 @@ document.querySelectorAll(".faq-question").forEach(button=>{
   });
 });
 </script>
-
-
-<!-- 🔐 隱私政策彈窗 -->
+<!-- 隱私政策彈窗 -->
 <div id="privacyModal" class="modal">
   <div class="modal-content">
-    <span class="close-btn" onclick="closePrivacy()">&times;</span>
-
+    <span class="close-btn">&times;</span>
     <h2>隱私政策</h2>
-
-    <p>
-    我們尊重客戶隱私，所有資料僅供貸款評估使用，
-    不會外流或轉售。
-    </p>
-
+    <div style="max-height:60vh; overflow-y:auto; padding-right:10px;">
+      <p>我們尊重並保護您的隱私。所有收集的個人資料僅用於提供貸款諮詢與相關服務，不會未經授權提供給第三方。</p>
+      <p>收集資料包括但不限於：姓名、電話、電子郵件、貸款需求及財務資料。</p>
+      <p>資料使用範圍：</p>
+      <ul>
+        <li>提供專業貸款規劃與金融諮詢。</li>
+        <li>聯絡與服務跟進。</li>
+        <li>依法律或主管機關要求提供必要資訊。</li>
+      </ul>
+      <p>您的資料安全將使用合理的技術與管理措施保護。我們承諾不會出售或租用您的資料給任何第三方。</p>
+      <p>您可隨時聯絡我們查詢、更正或刪除您的個人資料。</p>
+    </div>
   </div>
 </div>
+
+<script>
+// 打開隱私政策
+function openPrivacy() {
+  document.getElementById("privacyModal").style.display = "flex";
+}
+
+// 關閉隱私政策
+document.querySelector("#privacyModal .close-btn").addEventListener("click", function(){
+  document.getElementById("privacyModal").style.display = "none";
+});
+
+// 點擊彈窗外區域也會關閉
+window.addEventListener("click", function(e){
+  if(e.target.id === "privacyModal") {
+    document.getElementById("privacyModal").style.display = "none";
+  }
+});
+</script>
 
 <script>
 function openPrivacy(){
@@ -1740,6 +1767,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
