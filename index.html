@@ -37,6 +37,20 @@ body{
   z-index:999;
 }
 
+<!-- Swiper 容器 -->
+<div class="swiper-wrapper-container">
+  <div class="mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img1.jpg" alt="圖片1"></div>
+      <div class="swiper-slide"><img src="img2.jpg" alt="圖片2"></div>
+      <div class="swiper-slide"><img src="img3.jpg" alt="圖片3"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+
 /* 主視覺 */
 .hero{
   height:60vh;
@@ -1126,10 +1140,8 @@ bottom:15px;
   margin-bottom:40px;
 }
 
-.mySwiper {
-  width: 100%;
-  position: relative;
-  top: 120px; /* 往下調整距離 */
+.swiper-wrapper-container {
+  padding-top: 120px; /* 調整數值控制翻頁圖片往下距離 */
 }
 </style>
 </head>
@@ -1878,6 +1890,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
