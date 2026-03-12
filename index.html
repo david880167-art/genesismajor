@@ -1186,13 +1186,22 @@ bottom:15px;
     height: auto;
   }
 }
+/* 單一卡片樣式 */
+.process-card {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  align-items: center;    /* 水平置中 */
+  text-align: center;     /* 文字置中 */
+  gap: 10px;              /* 卡片內間距 */
+  padding: 15px;          /* 可選，讓卡片不擠 */
+}
 
-.process-card{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:15px;
-  text-align:left;
+/* 卡片區塊排列 */
+.process-cards {
+  display: flex;
+  flex-wrap: wrap;         /* 手機版自動換行 */
+  justify-content: center; /* 水平置中所有卡片 */
+  gap: 20px;               /* 卡片間距 */
 }
 </style>
 </head>
@@ -1972,6 +1981,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
