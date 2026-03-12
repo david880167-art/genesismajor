@@ -1197,6 +1197,7 @@ bottom:15px;
     <span>創世紀貸款</span>
   </div>
 </div>
+
 <!-- Swiper 輪播圖 -->
 <div class="swiper-wrapper-container">
   <div class="mySwiper swiper">
@@ -1205,21 +1206,22 @@ bottom:15px;
       <div class="swiper-slide"><img src="首圖2.Jpg.png" alt="圖片2"></div>
       <div class="swiper-slide"><img src="首圖3.Jpg.png" alt="圖片3"></div>
     </div>
+    <!-- 分頁點 -->
     <div class="swiper-pagination"></div>
+    <!-- 箭頭 -->
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
   </div>
 </div>
 
-
-
-    <!-- 分頁點 -->
-    <div class="image-pagination"></div>
-    <!-- 箭頭 -->
-    <div class="image-next"></div>
-    <div class="image-prev"></div>
-  </div>
-
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: { delay: 3000 },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  });
+</script>
  
   <!-- 背景柔光圓 -->
   <div class="hero-decor decor1"></div>
@@ -1942,6 +1944,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
