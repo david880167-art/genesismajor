@@ -1129,40 +1129,40 @@ bottom:15px;
   margin-bottom:40px;
 }
 
-/* Swiper 外層容器，往下推避開固定導覽列 */
+/* Swiper 外層容器，避開固定導覽列 */
 .swiper-wrapper-container {
-  padding-top: 120px; /* 調整數值控制翻頁圖片下移距離 */
+  padding-top: 120px; /* 導覽列高度 */
 }
 
-/* Swiper 容器高度 */
+/* Swiper 容器寬度滿螢幕 */
 .mySwiper {
   width: 100%;
-  height: 400px; /* 調整整個 Swiper 高度 */
+  height: auto;   /* 高度自動 */
 }
 
 /* 每個 slide 垂直水平置中 */
 .swiper-slide {
   display: flex;
-  align-items: center;      /* 垂直置中 */
-  justify-content: center;  /* 水平置中 */
+  align-items: center;
+  justify-content: center;
 }
 
 /* 圖片設定 */
 .swiper-slide img {
-  width: 100%;
-  height: 100%;             /* 填滿 Swiper 容器 */
-  object-fit: cover;        /* 保持填滿，裁掉部分圖片 */
-  object-position: center;  /* 上下左右置中裁切 */
+  width: 100%;        /* 滿螢幕寬度 */
+  height: auto;       /* 高度自動 */
+  object-fit: contain; /* 保持完整比例 */
   display: block;
-  border-radius: 15px;      /* 圓角，可保留 */
-  transition: transform 6s; /* 放大動畫 */
+  border-radius: 15px;
+  transition: transform 6s;
 }
 
+/* 活動 slide 放大效果 */
 .swiper-slide-active img {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
-/* Swiper 分頁與箭頭 */
+/* 分頁與箭頭 */
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
@@ -1177,14 +1177,13 @@ bottom:15px;
   opacity: 1;
 }
 
-/* 手機版自適應 */
-@media (max-width: 768px) {
+/* 手機版 */
+@media (max-width:768px){
   .mySwiper {
-    height: 250px; /* 手機高度可調小 */
+    height: auto;
   }
-
   .swiper-slide img {
-    height: 100%;
+    height: auto;
   }
 }
 </style>
@@ -1949,6 +1948,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
