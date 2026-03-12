@@ -1140,42 +1140,12 @@ bottom:15px;
   height: auto;   /* 高度自動 */
 }
 
-/* 每個 slide 垂直水平置中 */
-.swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* 圖片設定 */
-.swiper-slide img {
-  width: 100%;        /* 滿螢幕寬度 */
-  height: auto;       /* 高度自動 */
-  object-fit: contain; /* 保持完整比例 */
-  display: block;
-  border-radius: 15px;
-  transition: transform 6s;
-}
 
 /* 活動 slide 放大效果 */
 .swiper-slide-active img {
   transform: scale(1.02);
 }
 
-/* 分頁與箭頭 */
-.swiper-button-next,
-.swiper-button-prev {
-  color: white;
-}
-
-.swiper-pagination-bullet {
-  background: white;
-  opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-}
 
 /* 手機版 */
 @media (max-width:768px){
@@ -1948,6 +1918,7 @@ document.querySelectorAll(".accordion-btn").forEach(btn => {
 </body>
 
 </html>
+
 
 
 
